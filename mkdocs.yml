@@ -90,10 +90,11 @@ markdown_extensions:
   - pymdownx.smartsymbols
   - pymdownx.superfences
   # Mermaid support temporarily disabled
-  # - pymdownx.superfences:
-  #     custom_fences:
-  #       - name: mermaid
-  #         class: mermaid
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist:
@@ -113,6 +114,8 @@ extra:
 # Navigation
 nav:
   - Home: index.md
+  - Certificate Automation:
+    - Technical Documentation: certificate-automation/technical-documentation.md
   - Architecture:
     - Overview: architecture/index.md
     - System Design: architecture/system-design.md
@@ -126,11 +129,11 @@ nav:
     - Getting Started: api/getting-started.md
     - Authentication: api/authentication.md
     - Endpoints: api/endpoints.md
-  - Deployment:
-    - Docker Setup: deployment/docker.md
-    - CI/CD Pipeline: deployment/cicd.md
-    - Environment Configuration: deployment/environment.md
-  - Contributing:
-    - Development Guide: contributing/development.md
-    - Code Standards: contributing/standards.md
-    - Testing: contributing/testing.md
+  # - Deployment:
+  #   - Docker Setup: deployment/docker.md
+  #   - CI/CD Pipeline: deployment/cicd.md
+  #   - Environment Configuration: deployment/environment.md
+  # - Contributing:
+  #   - Development Guide: contributing/development.md
+  #   - Code Standards: contributing/standards.md
+  #   - Testing: contributing/testing.md
