@@ -51,7 +51,7 @@ theme:
 plugins:
   - search:
       lang: en
-  # - mermaid2  # Temporarily disabled due to compatibility issues
+  - mermaid2
   - git-revision-date-localized:
       enable_creation_date: true
       type: timeago
