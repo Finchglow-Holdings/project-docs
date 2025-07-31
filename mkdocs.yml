@@ -1,0 +1,136 @@
+site_name: TravelDen Documentation
+site_description: Comprehensive documentation for TravelDen services
+site_author: Omotayo Kuye
+site_url: https://your-username.github.io/TravelDen
+
+# Repository
+repo_name: TravelDen
+repo_url: https://github.com/your-username/TravelDen
+edit_uri: edit/main/project-docs/docs/
+
+# Copyright
+copyright: Copyright &copy; 2025 TravelDen Team
+
+# Configuration
+theme:
+  name: material
+  language: en
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.indexes
+    - toc.follow
+    - navigation.top
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+
+# Plugins
+plugins:
+  - search:
+      lang: en
+  # - mermaid2  # Temporarily disabled due to compatibility issues
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago
+  - minify:
+      minify_html: true
+  - awesome-pages
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: your-username
+      repo: TravelDen
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  # Mermaid support temporarily disabled
+  # - pymdownx.superfences:
+  #     custom_fences:
+  #       - name: mermaid
+  #         class: mermaid
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Extra
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/your-username/TravelDen
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/u/your-username
+  version:
+    provider: mike
+
+# Navigation
+nav:
+  - Home: index.md
+  - Architecture:
+    - Overview: architecture/index.md
+    - System Design: architecture/system-design.md
+    - Database Schema: architecture/database-schema.md
+  - Services:
+    - Booking Service: services/booking-service.md
+    - Payment Service: services/payment-service.md
+    - Product Service: services/product-service.md
+    - User Service: services/user-service.md
+  - API Documentation:
+    - Getting Started: api/getting-started.md
+    - Authentication: api/authentication.md
+    - Endpoints: api/endpoints.md
+  - Deployment:
+    - Docker Setup: deployment/docker.md
+    - CI/CD Pipeline: deployment/cicd.md
+    - Environment Configuration: deployment/environment.md
+  - Contributing:
+    - Development Guide: contributing/development.md
+    - Code Standards: contributing/standards.md
+    - Testing: contributing/testing.md
