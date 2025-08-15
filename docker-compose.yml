@@ -26,13 +26,14 @@ services:
     container_name: mkdocs-gh-deploy
     volumes:
       - .:/docs
-      - ~/.ssh:/root/.ssh:ro  # Mount SSH keys for GitHub authentication
     environment:
       - GIT_COMMITTER_NAME=GitHub Actions
       - GIT_COMMITTER_EMAIL=actions@github.com
       - GIT_AUTHOR_NAME=GitHub Actions
       - GIT_AUTHOR_EMAIL=actions@github.com
-    command: mkdocs gh-deploy --force
+    command: >
+      sh -c "git remote set-url origin https://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/Finchglow-Holdings/project-docs.git &&
+            mkdocs gh-deploy --force"
     dns:
       - 8.8.8.8
       - 8.8.4.4
